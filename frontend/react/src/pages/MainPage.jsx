@@ -1,5 +1,6 @@
 import {NavLink, useNavigate} from 'react-router-dom';
 import PageContent from "../components/pageContent/PageContent";
+import './mainPage.css';
 
 const MainPage = () => {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ const MainPage = () => {
             headerTitle="Página Principal"
         >
         <div>
-            < div className="card">
+            <div className="card">
               <NavLink
               to={'/students'}>
                 <h1>Módulo Alumnos</h1>
