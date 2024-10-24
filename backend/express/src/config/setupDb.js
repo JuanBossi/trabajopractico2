@@ -11,7 +11,7 @@ const createInstance = async () => {
         'root', // usuario
         'root', // contraseña
         {
-            host: '127.0.0.1:3306',
+            host: 'localhost',
             dialect: 'mysql',
             pool: {
                 max: 3

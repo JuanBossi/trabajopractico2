@@ -52,25 +52,18 @@ class Students extends Model {
     });
   };
 */
-  /*static getAll = async () => {
+  static getAll = async () => {
     return await this.findAll({
       where: {
         deleted: 0
       },
       attributes: {
         exclude: 'deleted, createdAt, updatedAt'
-      },
-      include: {
-        model: Levels,
-        as: 'levels',
-        attributes: {
-          exclude: 'careers_id, deleted, createdAt, updatedAt'
-        }
       }
     });
-  };*/
+  };
 
-  /*static getById = async (id) => {
+  static getById = async (id) => {
     return await this.findOne({
       where: {
         deleted: 0,
@@ -78,16 +71,9 @@ class Students extends Model {
       },
       attributes: {
         exclude: 'deleted, createdAt, updatedAt'
-      },
-      include: {
-        model: Levels,
-        as: 'levels',
-        attributes: {
-          exclude: 'careers_id, deleted, createdAt, updatedAt'
-        }
       }
     });
-  };*/
+  };
 
   /*static updateById = async (id, payload) => {
     return await this.update(payload, {
