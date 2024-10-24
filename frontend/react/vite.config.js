@@ -9,7 +9,7 @@ export default defineConfig({
    
     proxy: {
       '/api': {
-        target: 'http://localhost:300',
+        target: 'http://localhost:3000',
         headers: {
           'content-type': 'application/json; charset=utf-8'
         },
