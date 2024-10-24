@@ -1,10 +1,10 @@
 var express = require('express');
-var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var qs = require('querystring');
+require('./config/setupModel');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const studentsRoutes = require('./routes/studentsRoutes');
 
 var app = express();
 
@@ -12,9 +12,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.set('query parse', str => {
+    return qs.parse(str);
+});
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/students', studentsRoutes);
 
 module.exports = app;
