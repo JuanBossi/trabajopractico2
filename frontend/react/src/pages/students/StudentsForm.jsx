@@ -45,7 +45,7 @@ const StudentsForm = (id = null, values = defaultValues) => {
         <PageContent
             headerTitle="Agregar Alumno"
             actions={ [
-                <button key='back' onClick={() => navigate(-1)}>Atras</button>
+                <button key='back' className='button-back' onClick={() => navigate(-1)}>Atras</button>
               ] }
         >
             <form onSubmit={ handleSubmit(onSubmit) }>

@@ -31,7 +31,7 @@ const StudentsList = () => {
         <PageContent
              headerTitle="Alumnos"
              actions={ [
-              <button key='add' onClick={() => navigate('/students/form')}>Agregar</button>
+              <button key='add' className='button-add' onClick={() => navigate('/students/form')}>Agregar</button>
             ] }
         >
           {
@@ -58,21 +58,9 @@ const StudentsList = () => {
                         <td>{ student.sid }</td>
                         <td>{ student.firstname }</td>
                         <td>{ student.lastname }</td>
-                        <td> <button onClick={() => navigate(``)} >Borrar</button></td>
+                        <td> <button className='button-back' onClick={() => navigate(``)} >Borrar</button></td>
                       </tr>
                     ))
-                  
-                  
-                  /*
-                    careers.map(career => (
-                      <tr key={ career.id }>
-                        <td> { career.id } </td>
-                        <td> { career.name } </td>
-                        <td> { career.levels.length } </td>
-                        <td> <button onClick={() => navigate(`/careers/${career.id}`)} >Ver detalle</button> </td>
-                      </tr>
-                    ))
-                    */
                   }
                 </tbody>
               </table>

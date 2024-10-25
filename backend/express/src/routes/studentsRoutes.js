@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { findAll, create, findById, updateById, deleteById } = require('../services/studentsServices');
+const { findAll, create, findById, updateById, deleteById, getLastStudentSid } = require('../services/studentsServices');
 const { validateById, validateBody } = require('../middleware/studentsMiddleware');
 
 const router = express.Router();
