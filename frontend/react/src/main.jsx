@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css'
 import Layout from './layout/layout.jsx';
 import MainPage from './pages/MainPage.jsx';
-import Students from './pages/students/StudentsList.jsx';
+import StudentsList from './pages/students/StudentsList.jsx';
+import StudentsForm from './pages/students/StudentsForm.jsx';
 
 const router = createBrowserRouter ([
   {
@@ -17,7 +18,11 @@ const router = createBrowserRouter ([
       },
       {
         path: '/students',
-        element: <Students />
+        element: <StudentsList />
+      },
+      {
+        path: '/students/form',
+        element: <StudentsForm />
       }
     ]
   }
