@@ -48,24 +48,24 @@ const StudentsForm = (id = null, values = defaultValues) => {
                 <button key='back' className='button-back' onClick={() => navigate(-1)}>Atras</button>
               ] }
         >
-            <form onSubmit={ handleSubmit(onSubmit) }>
-                <div>
+            <form class="student-form" onSubmit={ handleSubmit(onSubmit) }>
+                <div className="form-group">
                     <label>Nombre:</label>
                     <input { ...register('inputNameValue')} />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Apellido:</label>
                     <input { ...register('inputLastNameValue') } />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>DNI: </label>
                     <input { ...register('inputDniValue') } />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Email: </label>
                     <input { ...register('inputEmailValue') } />
                 </div>
-                <button type='submit'>Guardar</button>
+                <button className='button-add' type='submit'>Guardar</button>
             </form>    
         </PageContent>
     );
