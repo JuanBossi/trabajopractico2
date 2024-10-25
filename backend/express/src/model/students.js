@@ -1,34 +1,34 @@
 const { DataTypes, Model } = require("sequelize");
-//const Levels = require("./levels");
+
 
 class Students extends Model {
   static init = (sequelize) => {
     super.init(
       {
         id: {
-            type: DataTypes.TINYINT,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
         sid: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.BIGINT,
             allowNull: false
         },
         firstname: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         lastname: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         dni: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.BIGINT,
             allowNull: false
         },
         email: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         deleted: {
@@ -36,7 +36,7 @@ class Students extends Model {
             values: [0, 1],
             defaultValue: 0
         }
-      }, // attributes
+      }, 
       {
         sequelize,
         modelName: 'students',
@@ -45,13 +45,7 @@ class Students extends Model {
     return this;
   };
 
-  /*static associate = models => {
-    this.hasMany(models.Levels, {
-      foreignKey: 'careers_id',
-      as: 'levels'
-    });
-  };
-*/
+
   static getAll = async () => {
     return await this.findAll({
       where: {

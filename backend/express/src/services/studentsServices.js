@@ -1,3 +1,4 @@
+const { INTEGER } = require('sequelize');
 const { Students } = require('../model/students');
 
 const findAll = async () => {
@@ -12,20 +13,36 @@ const findAll = async () => {
 
 const findById = async (id) => {
     try {
-        const career = await Students.getById(id);
+        const student = await Students.getById(id);
 
-        return career;
+        return student;
     } catch (error) {
         console.error('studentsServices: ' + error);
         throw error;
     }
 };
 
-const create = async (career) => {
+const create = async (student) => {
     try {
-        const newCareer = await Students.create({ name: career.name });
+        if (typeof student === 'string') {
+            student = JSON.parse(student);
+        }
+        let dniNumber = parseInt(student.dni);
 
-        return newCareer;
+        console.log(student.name);
+        console.log(student.lastname);
+        console.log(dniNumber);
+        console.log(student.email);
+
+        const newStudent = await Students.create({
+            sid: 15,
+            firstname: student.name,
+            lastname: student.lastname,
+            dni: dniNumber,
+            email: student.email,
+            deleted: 0
+          })
+        return newStudent;
     } catch (error) {
         console.error('studentsServices: ' + error);
         throw error;
